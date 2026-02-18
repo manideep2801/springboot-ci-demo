@@ -11,7 +11,7 @@ public class SpringBootAwsDeploymentApplication {
 
 	@GetMapping("/message")
 	public String message() {
-		return "Welcome to CI/CD...The updated version";
+		return "Welcome to CI/CD...The updated version......";
 	}
 
 	public static void main(String[] args) {
