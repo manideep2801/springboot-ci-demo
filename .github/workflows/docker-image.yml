@@ -31,7 +31,9 @@ jobs:
 
     - name: Set image tag
       id: vars
-      run: echo "TAG=${GTIHUB_SHA:0:7}" >> $GITHUB_OUTPUT
+      run: |
+        SHORT_SHA=$(echo $GITHUB_SHA | cut -c1-7)
+        echo "TAG=$SHORT_SHA" >> $GITHUB_OUTPUT
 
     - name: Build the Docker image (SHA + latest)
       run: |
